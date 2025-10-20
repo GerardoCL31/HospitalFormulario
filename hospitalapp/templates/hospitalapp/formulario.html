@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Cita</title>
+</head>
+<body>
+    <h1>Registro Cita</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+
+        <p>
+            {{field.label_tag }}<br>
+            {{ field }}
+            {% if field.errors %}
+                <span style="color: red;">{{ field.errors|striptags}}</span>
+            {% endif %}
+
+        </p>
+        {% endfor %}
+        <button type="submit">Guardar cita</button>
+    </form>
+</body>
+</html>
