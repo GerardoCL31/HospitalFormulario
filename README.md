@@ -1,48 +1,53 @@
-# HospitalFormulario
-🧭 1. Clonar el repositorio
+🏥 Cómo ejecutar el proyecto HospitalFormulario
+📋 Requisitos previos
 
-Primero, abre tu terminal (o CMD) y clona el proyecto:
+Python 3.8 o superior
 
+pip (gestor de paquetes de Python)
+
+Git (opcional, para clonar el repositorio)
+
+⚙️ 1. Clonar el repositorio
 git clone https://github.com/GerardoCL31/HospitalFormulario.git
-
-
-Luego entra al directorio:
-
 cd HospitalFormulario
 
-⚙️ 2. Crear y activar un entorno virtual (recomendado)
-
-Esto evita conflictos con otras dependencias de Python.
-
+🧱 2. Crear y activar un entorno virtual
 python -m venv venv
 
 
-Activar el entorno virtual:
+Activar el entorno:
 
-Windows:
+En Windows:
 
 venv\Scripts\activate
 
 
-Mac/Linux:
+En macOS / Linux:
 
 source venv/bin/activate
 
 📦 3. Instalar dependencias
 
-Si el proyecto tiene un archivo requirements.txt (muy probable):
+El proyecto usa Django, así que instala:
 
-pip install -r requirements.txt
-
-🚀 4. Correr el servidor
-
-Busca el archivo que menciona, runserver.py.
-
-Si existe, simplemente ejecútalo con:
-
-python runserver.py
+pip install django
 
 
-👉 Normalmente, si es un proyecto Flask, deberías ver algo como:
+(Otras dependencias se pueden agregar según sea necesario.)
 
- * Running on http://127.0.0.1:5000/
+🗃️ 4. Aplicar migraciones
+python manage.py migrate
+
+🚀 5. Ejecutar el servidor
+python manage.py runserver
+
+
+Luego abre tu navegador y entra a:
+👉 http://localhost:8000
+
+🔑 6. (Opcional) Crear un usuario administrador
+python manage.py createsuperuser
+
+
+Luego entra al panel en
+👉 http://localhost:8000/admin
